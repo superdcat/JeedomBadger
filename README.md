@@ -5,4 +5,4 @@ Ce plug in , permet de connecter Jeedom (https://www.jeedom.com/site/fr/) à de
 
 Documentation :
 
-(https://github.com/rmesnard/JeedomBadger/blob/master/doc/fr_FR/index.asciidoc)
+(https://github.com/superdcat/JeedomBadger/blob/master/doc/fr_FR/index.asciidoc)
