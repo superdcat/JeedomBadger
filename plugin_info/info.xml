@@ -5,7 +5,7 @@
     <description>Plugin de gestion de badges</description>
     <icon>fa fa-pie-chart</icon>
     <licence>AGPL</licence>
-    <author>Remy Mesnard</author>
+    <author>SUperDC@T</author>
     <installation>Aucune</installation>
     <require>1.192</require>
     <category>security</category>
