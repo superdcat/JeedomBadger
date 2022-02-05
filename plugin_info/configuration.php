@@ -33,16 +33,16 @@ if (!isConnect('admin')) {
 	<div class="form-group">
 			<label class="col-lg-5 control-label">{{Sketch Arduino}}</label>
             <div class="col-lg-4">
-			     <a class="btn btn-default" href="/../arduino/BadgerENC28J60/BadgerENC28J60.ino"><i class="fa fa-cloud-download"></i> {{Sketch pour Arduino + ENC28J60}}</a>
-				 <a class="btn btn-default" href="/../arduino/BadgerW5100/BadgerW5100.ino"><i class="fa fa-cloud-download"></i> {{Sketch pour Arduino + W5100}}</a>
-				 <a class="btn btn-default" href="/../arduino/JeedouinoLAN/JeedouinoLAN.ino"><i class="fa fa-cloud-download"></i> {{Sketch Jeedouino modifié}}</a>
+			     <a class="btn btn-default" href="/plugins/badger/arduino/BadgerENC28J60/BadgerENC28J60.ino"><i class="fa fa-cloud-download"></i> {{Sketch pour Arduino + ENC28J60}}</a>
+				 <a class="btn btn-default" href="/plugins/badger/arduino/BadgerW5100/BadgerW5100.ino"><i class="fa fa-cloud-download"></i> {{Sketch pour Arduino + W5100}}</a>
+				 <a class="btn btn-default" href="/plugins/badger/arduino/JeedouinoLAN/JeedouinoLAN.ino"><i class="fa fa-cloud-download"></i> {{Sketch Jeedouino modifié}}</a>
 				</div>  
 	</div>
 	<div class="form-group">
 			<label class="col-lg-5 control-label">{{Librairies Arduino}}</label>
             <div class="col-lg-4">
-			     <a class="btn btn-default" href="/../arduino/libraries/ethercard.zip"><i class="fa fa-cloud-download"></i> {{EtherCard pour ENC28J60}}</a>
-				 <a class="btn btn-default" href="/../arduino/libraries/Wiegand.zip"><i class="fa fa-cloud-download"></i> {{Wiegand}}</a>
+			     <a class="btn btn-default" href="/plugins/badger/arduino/libraries/ethercard.zip"><i class="fa fa-cloud-download"></i> {{EtherCard pour ENC28J60}}</a>
+				 <a class="btn btn-default" href="/plugins/badger/arduino/libraries/Wiegand.zip"><i class="fa fa-cloud-download"></i> {{Wiegand}}</a>
 				</div>  
 	</div>
    </fieldset>
