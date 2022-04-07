@@ -5,9 +5,9 @@
 // reader and Jeedom settings
 
 // Jeedom server IP
-IPAddress server(192,168,0,39);
+IPAddress server(192,168,2,3);
 // Number of reader in networks ( 0 to 255 )
-#define READER_NUMBER 2
+#define READER_NUMBER 1
 
 // End Of Settings
 
@@ -94,11 +94,17 @@ void setup () {
 }
 
 void loop () {
-  
+   
   
 
 if(wg.available())
   {
+    Serial.print("Wiegand HEX = ");
+    Serial.print(wg.getCode(),HEX);
+    Serial.print(", DECIMAL = ");
+    Serial.print(wg.getCode());
+    Serial.print(", Type W");
+    Serial.println(wg.getWiegandType());    
     
     int type = wg.getWiegandType();
 
@@ -108,7 +114,7 @@ if(wg.available())
           CodeLen=0;    
     }
   
-    if ( type == 8 )
+    if ( type == 4  || type == 8 ) //En mode digicode on récupère les touches une par une
     {
       if ( wg.getCode() == 13 )
       {
