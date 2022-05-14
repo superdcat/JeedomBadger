@@ -8,6 +8,8 @@
 IPAddress server(192,168,2,3);
 // Number of reader in networks ( 0 to 255 )
 #define READER_NUMBER 1
+// Number of second to forget the entered code
+#define FORGET_SECOND 30
 
 // End Of Settings
 
@@ -16,13 +18,11 @@ IPAddress server(192,168,2,3);
 
 
 static byte mymac[] = { 0x42,0x41,0x44,0x47,0x45,0x00 };
-
-
 WIEGAND wg;
 String Code;
 byte CodeLen;
 EthernetClient client;
-
+unsigned long lastEntered = millis();
 
 static void sendtoJeedom (char * cmd,char * value) {
 
@@ -105,10 +105,11 @@ if(wg.available())
     Serial.print(wg.getCode());
     Serial.print(", Type W");
     Serial.println(wg.getWiegandType());    
+
     
     int type = wg.getWiegandType();
 
-    if ( CodeLen >24 )
+    if ( CodeLen > 24 )
     {
           Code = "";
           CodeLen=0;    
@@ -116,6 +117,18 @@ if(wg.available())
   
     if ( type == 4  || type == 8 ) //En mode digicode on récupère les touches une par une
     {
+      Serial.print("LastEntered : ");
+      Serial.println(lastEntered);
+      Serial.print("Now : ");
+      Serial.println(millis());
+      if(CodeLen > 0 && millis() - lastEntered > FORGET_SECOND*1000) //On oublie, la dernière sasie est trop vieille
+      {
+            Serial.println("Init code by time");
+            Code = "";
+            CodeLen=0;
+      }
+      lastEntered = millis();
+      
       if ( wg.getCode() == 13 )
       {
         sendtoJeedom("pin",Code.c_str());
@@ -131,6 +144,7 @@ if(wg.available())
        }
         else
           Code.concat( String(wg.getCode(),HEX));
+          CodeLen++;
       }
     }
     else
