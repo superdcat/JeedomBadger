@@ -1,6 +1,7 @@
 = Fonctionnement et Utilisation des équipements
 
 Le plug-in n'exécute que très peu de tache en automatique, il met simplement à disponibilité des équipements et des commandes à utiliser dans vos propres scenarios. Des exemples de scenarios sont disponible dans cette documentation.
+Les entrées analogiques fonctionnent comme des badges. Pour les paramétrer référez vous à la documentation concernant les badges.
 
 == Fonctions automatiques
 

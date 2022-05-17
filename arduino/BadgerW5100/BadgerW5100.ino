@@ -10,8 +10,12 @@ IPAddress server(192,168,2,3);
 #define READER_NUMBER 1
 // Number of second to forget the entered code
 #define FORGET_SECOND 30
+// THRESHOLD to trigger the analog input (change only if problem)
+#define THRESHOLD_TRIGGER 1022
 
 // End Of Settings
+
+
 
 //wiring  green D0 - 2
 //        white D1 - 3
@@ -23,9 +27,11 @@ String Code;
 byte CodeLen;
 EthernetClient client;
 unsigned long lastEntered = millis();
+int val1, val2, val3, val4, val5 = 0;
 
 static void sendtoJeedom (char * cmd,char * value) {
 
+  Serial.println(value);
   if (client.connect(server, 80)) {
     // Make a HTTP request:
 
@@ -95,8 +101,6 @@ void setup () {
 
 void loop () {
    
-  
-
 if(wg.available())
   {
     Serial.print("Wiegand HEX = ");
@@ -156,5 +160,28 @@ if(wg.available())
     } 
 
   }
+
+//Gestion des entrées analogiques
+
+analogRead(A0); //Reading a ground pin between each other pin goes the internal capacitance to 0 
+analogRead(A1);
+if(analogRead(A1) > THRESHOLD_TRIGGER && val1 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog1"); }
+val1 = analogRead(A1);
+analogRead(A0);
+analogRead(A2);
+if(analogRead(A2) > THRESHOLD_TRIGGER && val2 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog2"); }
+val2 = analogRead(A2);
+analogRead(A0);
+analogRead(A3);
+if(analogRead(A3) > THRESHOLD_TRIGGER && val3 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog3"); }
+val3 = analogRead(A3);
+analogRead(A0);
+analogRead(A4);
+if(analogRead(A4) > THRESHOLD_TRIGGER && val4 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog4"); }
+val4 = analogRead(A4);
+analogRead(A0);
+analogRead(A5);
+if(analogRead(A5) > THRESHOLD_TRIGGER && val5 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog5"); }
+val5 = analogRead(A5);
   
 }

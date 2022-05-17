@@ -149,6 +149,8 @@ $eqLogics = eqLogic::byType($plugin->getId());
 							echo '<img src="plugins/badger/doc/images/badge5.png" height="105" width="95" />';
 						elseif ( $eqLogic->getConfiguration('modelTag') == 'Bague NFC'  )
 							echo '<img src="plugins/badger/doc/images/badge6.png" height="105" width="95" />';
+						elseif ( $eqLogic->getConfiguration('modelTag') == 'Analog Input'  )
+							echo '<img src="plugins/badger/doc/images/badge7.png" height="105" width="95" />';
 						else
 							echo '<img src="plugins/badger/doc/images/badge1.png" height="105" width="95" />';
 
@@ -309,6 +311,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									<option value="Mobile">{{Mobile}}</option>
 									<option value="Carte NFC">{{Carte NFC}}</option>
 									<option value="Bague NFC">{{Bague NFC}}</option>
+									<option valude="Analog Input">Analog Input</option>
 								</select>
 								</div>
 							</div>

@@ -11,8 +11,13 @@
 #define READER_NUMBER 1
 // Number of second to forget the entered code
 #define FORGET_SECOND 30
+// THRESHOLD to trigger the analog input (change only if problem)
+#define THRESHOLD_TRIGGER 1022
 
 // End Of Settings
+
+
+
 
 //wiring  green D0 - 3
 //        white D1 - 4
@@ -27,6 +32,7 @@ WIEGAND wg;
 String Code;
 byte CodeLen;
 unsigned long lastEntered = millis();
+int val1, val2, val3, val4, val5 = 0;
 
 
 static void my_callback (byte status, word off, word len) {
@@ -71,10 +77,10 @@ if(wg.available())
           CodeLen=0;    
     }
   
-    if ( type == 4  || type == 8 ) //En mode digicode on récupère les touches une par une
+    if ( type == 4  || type == 8 ) //En mode digicode on rÃ©cupÃ¨re les touches une par une
     {
     
-	  if(CodeLen > 0 && millis() - lastEntered > FORGET_SECOND*1000) //On oublie, la dernière sasie est trop vieille
+	  if(CodeLen > 0 && millis() - lastEntered > FORGET_SECOND*1000) //On oublie, la derniÃ¨re sasie est trop vieille
       {
             Serial.println("Init code by time");
             Code = "";
@@ -109,5 +115,28 @@ if(wg.available())
     } 
 
   }
+
+//Gestion des entrÃ©es analogiques
+
+analogRead(A0); //Reading a ground pin between each other pin goes the internal capacitance to 0 
+analogRead(A1);
+if(analogRead(A1) > THRESHOLD_TRIGGER && val1 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog1"); }
+val1 = analogRead(A1);
+analogRead(A0);
+analogRead(A2);
+if(analogRead(A2) > THRESHOLD_TRIGGER && val2 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog2"); }
+val2 = analogRead(A2);
+analogRead(A0);
+analogRead(A3);
+if(analogRead(A3) > THRESHOLD_TRIGGER && val3 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog3"); }
+val3 = analogRead(A3);
+analogRead(A0);
+analogRead(A4);
+if(analogRead(A4) > THRESHOLD_TRIGGER && val4 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog4"); }
+val4 = analogRead(A4);
+analogRead(A0);
+analogRead(A5);
+if(analogRead(A5) > THRESHOLD_TRIGGER && val5 < THRESHOLD_TRIGGER) { sendtoJeedom("tag","Analog5"); }
+val5 = analogRead(A5);
   
 }

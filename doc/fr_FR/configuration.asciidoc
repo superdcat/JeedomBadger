@@ -19,22 +19,36 @@ Des exemples de sketch Arduino sont fourni (voir la page de configuration du plu
 (Testé sur Duemilanove 168/328 et Uno)
 Dans ce sketch 2 paramètres sont à définir :  L'adresse IP du serveur Jeedom et le numéro de lecteur sur le réseau (à incrémenter)
 
+Vous pouvez paramétrer le nombre de secondes au bout duquel le lecteur oublie les premiers chiffres tapés.
+
+Enfin, si vous utilisez les entrées analogiques vous pouvez régler la valeur du threshold. Le maximum est 1022, mais si vous avez une petite perte de signal liée à la longeur du cable et que le bouton ne déclenche pas toujours l'évènement dans jeedom, vous pouvez réduire un peu cette valeur.
+
 image::../images/inosettings_enc28j60.png[]
 
 Câblage :
 
 image::../images/arduinowiring_enc28j60.png[]
 
+Vous pouvez également utiliser 5 entrées analogiques (A1 à A5) pour y connecter des boutons de type poussoir (5 actions différentes). Il faudra les cabler avec le 5v. Vous pouvez par exemple utiliser le bouton sonette d'un digicode. Vous devez également connecter le A0 au ground pour que le système n'ai pas de parasites.
+Si vous ne souhaitez pas utiliser les entrée analogiques vous pouvez les laisser toutes (A0 à A5) débranchées.
+
 === Arduino + Interface réseau W5100 		
 
 (Testé sur Uno et Mega 2560)
 Dans ce sketch 2 paramètres sont à définir :  L'adresse IP du serveur Jeedom et le numéro de lecteur sur le réseau (à incrémenter)
+
+Vous pouvez paramétrer le nombre de secondes au bout duquel le lecteur oublie les premiers chiffres tapés.
+
+Enfin, si vous utilisez les entrées analogiques vous pouvez régler la valeur du threshold. Le maximum est 1022, mais si vous avez une petite perte de signal liée à la longeur du cable et que le bouton ne déclenche pas toujours l'évènement dans jeedom, vous pouvez réduire un peu cette valeur.
 
 image::../images/inosettings_w5100.png[]
 
 Câblage :
 
 image::../images/arduinowiring_w5100.png[]
+
+Vous pouvez également utiliser 5 entrées analogiques (A1 à A5) pour y connecter des boutons de type poussoir (5 actions différentes). Il faudra les cabler avec le 5v. Vous pouvez par exemple utiliser le bouton sonette d'un digicode. Vous devez également connecter le A0 au ground pour que le système n'ai pas de parasites.
+Si vous ne souhaitez pas utiliser les entrée analogiques vous pouvez les laisser toutes (A0 à A5) débranchées.
 
 === Jeedouino 		
 
@@ -82,9 +96,10 @@ image::../images/Screen2.png[]
 * La Limite de code faux défini le nombre maximum de code faux (inconnu) qui peuvent être présenté avant blocage. Si cette limite est atteinte, le lecteur sera bloqué pendant le temps défini ci-dessus.
 
 
-=== Configuration des badges
+=== Configuration des badges et entrées analogiques
 
 La configuration des badges permet d'ajuster certains paramètres. Elle doit être effectuée et sauvegardé après chaque ajout de nouveau badge.
+Les entrées analogiques apparaissent comme des badges.
 
 image::../images/Screen4.png[]
 
@@ -92,8 +107,8 @@ image::../images/Screen4.png[]
 * L'objet parent jeedom (optionnel).
 * Activer / Désactiver (un badge désactivé sera ignoré par le plug-in).
 * Visible / Invisible (dans jeedom)
-* Le model est purement informatif dans cette version. Il servira dans une prochaine version du plug-in à déterminer le type d'identification à utiliser.
-* La valeur (ce paramètre ne peut pas être changé) affiche l'identifiant lu sur le badge en décimal.
+* Le model est purement informatif. Il sert à mieux les reconnaitre dans l'administration du plugin.
+* La valeur (ce paramètre ne peut pas être changé) affiche l'identifiant lu sur le badge en décimal. Pour les entrées analogique, il indique le numéro de l'entrée utilisée
 
 === Configuration des codes
 
