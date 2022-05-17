@@ -69,7 +69,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			<div class="cursor eqLogicAction" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
 				<a target="_blank" style="text-decoration: none!important;" href="https://github.com/superdcat/JeedomBadger/blob/master/doc/fr_FR/index.asciidoc">
 					<center>
-						<i class="fa fa-book" style="font-size : 6em;color:#00979C;"></i>
+						<i class="fa fa-book" style="font-size : 7.5em;color:#00979C;"></i>
 					</center> 
 					<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#00979C"><center>{{Documentation}}</center></span>
 				</a>
@@ -84,7 +84,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 	?>	
 
 		<center>
-		<i class="fa fa-sign-in fa-rotate-90" style="font-size : 6em;color:#00979C;"></i>
+		<i class="fa fa-plus" style="font-size : 6em;color:#00979C;"></i>
 		</center>
 		<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#00979C"><center>{{Mode inclusion}}</center></span>
 	</div>
@@ -98,7 +98,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 	?>	
 
 		<center>
-		<i class="fa fa-sign-in fa-rotate-90" style="font-size : 6em;color:#ff1111;"></i>
+		<i class="fa fa-minus-circle" style="font-size : 6em;color:#ff1111;"></i>
 		</center>
 		<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#00979C"><center>{{Arrêter inclusion}}</center></span>
 	</div>

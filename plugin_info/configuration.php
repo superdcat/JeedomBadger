@@ -41,8 +41,8 @@ if (!isConnect('admin')) {
 	<div class="form-group">
 			<label class="col-lg-5 control-label">{{Librairies Arduino}}</label>
             <div class="col-lg-4">
-			     <a class="btn btn-default" target="_blank" href="/plugins/badger/arduino/libraries/ethercard.zip"><i class="fa fa-cloud-download"></i> {{EtherCard pour ENC28J60}}</a>
-				 <a class="btn btn-default" target="_blank" href="/plugins/badger/arduino/libraries/Wiegand.zip"><i class="fa fa-cloud-download"></i> {{Wiegand}}</a>
+			     <a class="btn btn-default" target="_blank" href="https://github.com/superdcat/JeedomBadger/raw/master/arduino/libraries/ethercard.zip"><i class="fa fa-cloud-download"></i> {{EtherCard pour ENC28J60}}</a>
+				 <a class="btn btn-default" target="_blank" href="https://github.com/superdcat/JeedomBadger/raw/master/arduino/libraries/Wiegand.zip"><i class="fa fa-cloud-download"></i> {{Wiegand}}</a>
 				</div>  
 	</div>
    </fieldset>

@@ -146,7 +146,7 @@ if($cmd == "tag")
 		$elogic->setEqType_name('badger');
 		$elogic->setLogicalId($badgeid);
 		$elogic->setName($badgeid);
-		if(str_starts_with($value, 'Analog')){
+		if(strpos($value, 'Analog') >= 0){
 			$elogic->setConfiguration('modelTag','Analog Input');
 		} else {
 			$elogic->setConfiguration('modelTag','Tag RFID');
