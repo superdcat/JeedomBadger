@@ -8,6 +8,7 @@
   "category": "security",
   "display": "panel",
   "mobile": "panel",
+  "link -> forum": "https://community.jeedom.com/tag/plugin-badger",
   "changelog": "https://github.com/superdcat/JeedomBadger/commits/master",
   "documentation": "https://github.com/superdcat/JeedomBadger/blob/master/doc/fr_FR/index.asciidoc",
   "language": [ "fr_FR" ],

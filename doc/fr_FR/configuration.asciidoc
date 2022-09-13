@@ -19,9 +19,9 @@ Des exemples de sketch Arduino sont fourni (voir la page de configuration du plu
 (Testé sur Duemilanove 168/328 et Uno)
 Dans ce sketch 2 paramètres sont à définir :  L'adresse IP du serveur Jeedom et le numéro de lecteur sur le réseau (à incrémenter)
 
-Vous pouvez paramétrer le nombre de secondes au bout duquel le lecteur oublie les premiers chiffres tapés.
+Vous pouvez paramétrer le nombre de secondes au bout duquel le lecteur oublie les premiers chiffres tapés. Cela évite de valider un faux code si des chiffres avaient été saisis quelques heures avant...
 
-Enfin, si vous utilisez les entrées analogiques vous pouvez régler la valeur du threshold. Le maximum est 1022, mais si vous avez une petite perte de signal liée à la longeur du cable et que le bouton ne déclenche pas toujours l'évènement dans jeedom, vous pouvez réduire un peu cette valeur.
+Enfin, vous pouvez également utiliser 5 entrées analogiques (A1 à A5) pour y connecter des boutons de type poussoir (5 actions différentes). Dans ce cas vous pouvez régler la valeur du threshold (seuil de déclenchement). Le maximum est 1022, mais si vous avez une petite perte de signal liée à la longeur du cable et que le bouton ne déclenche pas toujours l'évènement dans jeedom, vous pouvez réduire un peu cette valeur.
 
 image::../images/inosettings_enc28j60.png[]
 
@@ -29,17 +29,20 @@ Câblage :
 
 image::../images/arduinowiring_enc28j60.png[]
 
-Vous pouvez également utiliser 5 entrées analogiques (A1 à A5) pour y connecter des boutons de type poussoir (5 actions différentes). Il faudra les cabler avec le 5v. Vous pouvez par exemple utiliser le bouton sonette d'un digicode. Vous devez également connecter le A0 au ground pour que le système n'ai pas de parasites.
-Si vous ne souhaitez pas utiliser les entrée analogiques vous pouvez les laisser toutes (A0 à A5) débranchées.
+Si vous souhaitez utiliser les entrées analogiques il faudra les cabler avec le 5v. Vous pouvez par exemple utiliser le bouton sonnette d'un digicode. Vous devez également connecter le A0 au ground pour que le système n'ai pas de parasites.
+Si vous ne souhaitez pas utiliser les entrées analogiques vous pouvez les laisser toutes (A0 à A5) débranchées.
 
-=== Arduino + Interface réseau W5100 		
+Attention un lecteur RFID nécessite au moins du 9V voir du 12V s’il est muni d'un clavier. Une tension inférieure lui fera perdre en porté de lecture RFID.  Il est fortement déconseillé d'utiliser la broche VIN de l’Arduino pour alimenter le lecteur en cas de branchement en USB vous allez griller votre Arduino. 
+Le 12V peu être pris en amont de l’Arduino et utiliser une alimentation commune.
+
+=== Arduino + Interface réseau W5100 (W5100/W5200/W5500-based devices)		
 
 (Testé sur Uno et Mega 2560)
 Dans ce sketch 2 paramètres sont à définir :  L'adresse IP du serveur Jeedom et le numéro de lecteur sur le réseau (à incrémenter)
 
-Vous pouvez paramétrer le nombre de secondes au bout duquel le lecteur oublie les premiers chiffres tapés.
+Vous pouvez paramétrer le nombre de secondes au bout duquel le lecteur oublie les premiers chiffres tapés. Cela évite de valider un faux code si des chiffres avaient été saisis quelques heures avant...
 
-Enfin, si vous utilisez les entrées analogiques vous pouvez régler la valeur du threshold. Le maximum est 1022, mais si vous avez une petite perte de signal liée à la longeur du cable et que le bouton ne déclenche pas toujours l'évènement dans jeedom, vous pouvez réduire un peu cette valeur.
+Enfin, vous pouvez également utiliser 5 entrées analogiques (A1 à A5) pour y connecter des boutons de type poussoir (5 actions différentes). Dans ce cas vous pouvez régler la valeur du threshold (seuil de déclenchement). Le maximum est 1022, mais si vous avez une petite perte de signal liée à la longeur du cable et que le bouton ne déclenche pas toujours l'évènement dans jeedom, vous pouvez réduire un peu cette valeur.
 
 image::../images/inosettings_w5100.png[]
 
@@ -47,16 +50,18 @@ Câblage :
 
 image::../images/arduinowiring_w5100.png[]
 
-Vous pouvez également utiliser 5 entrées analogiques (A1 à A5) pour y connecter des boutons de type poussoir (5 actions différentes). Il faudra les cabler avec le 5v. Vous pouvez par exemple utiliser le bouton sonette d'un digicode. Vous devez également connecter le A0 au ground pour que le système n'ai pas de parasites.
-Si vous ne souhaitez pas utiliser les entrée analogiques vous pouvez les laisser toutes (A0 à A5) débranchées.
+
+Si vous souhaitez utiliser les entrées analogiques il faudra les cabler avec le 5v. Vous pouvez par exemple utiliser le bouton sonnette d'un digicode. Vous devez également connecter le A0 au ground pour que le système n'ai pas de parasites.
+Si vous ne souhaitez pas utiliser les entrées analogiques vous pouvez les laisser toutes (A0 à A5) débranchées.
+
+Attention un lecteur RFID nécessite au moins du 9V voir du 12V s’il est muni d'un clavier. Une tension inférieure lui fera perdre en porté de lecture RFID.  Il est fortement déconseillé d'utiliser la broche VIN de l’Arduino pour alimenter le lecteur en cas de branchement en USB vous allez griller votre Arduino. 
+Le 12V peu être pris en amont de l’Arduino et utiliser une alimentation commune.
 
 === Jeedouino 		
 
 Pour les utilisateurs de Jeedouino, le sketch de celui-ci peut être facilement modifié pour inclure cette fonctionnalité. Dans ce cas les PIN 2 et 3 ne devront pas être utilisées par Jeedouino.
 
-Attention un lecteur RFID nécessite au moins du 9V voir du 12V s’il est muni d'un clavier. Une tension inférieure lui fera perdre en porté de lecture RFID.  Il est fortement déconseillé d'utiliser la broche VIN de l’Arduino pour alimenter le lecteur en cas de branchement en USB vous allez griller votre Arduino. 
-Le 12V peu être pris en amont de l’Arduino et utiliser une alimentation commune.
-
+Un sketch d'exemple est disponible dans la page de configuration du plugin, mais il ne contient pas toutes les fonctionnalités. Il est là pour vous aider à modifier votre sketch Jeedouino.
 
 == Configuration des équipements
 
