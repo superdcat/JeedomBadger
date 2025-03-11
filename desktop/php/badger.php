@@ -117,9 +117,9 @@ $eqLogics = eqLogic::byType($plugin->getId());
 						echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
 						echo "<center>";
 						if ( $eqLogic->getConfiguration('modelReader') == 'wiegand1'  )
-							echo '<img src="plugins/badger/doc/images/wiegand1.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/wiegand1.png" height="105" width="95" />';
 						else
-							echo '<img src="plugins/badger/doc/images/wiegand2.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/wiegand2.png" height="105" width="95" />';
 						echo "</center>";
 						echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
 						echo '</div>';
@@ -138,21 +138,21 @@ $eqLogics = eqLogic::byType($plugin->getId());
 						echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
 						echo "<center>";
 						if ( $eqLogic->getConfiguration('modelTag') == 'Tag RFID'  )
-							echo '<img src="plugins/badger/doc/images/badge1.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge1.png" height="105" width="95" />';
 						elseif (( $eqLogic->getConfiguration('modelTag') == 'Carte RFID'  ) | ( $eqLogic->getConfiguration('modelTag') == 'Carte NFC'  ) ) 
-							echo '<img src="plugins/badger/doc/images/badge2.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge2.png" height="105" width="95" />';
 						elseif ( $eqLogic->getConfiguration('modelTag') == 'Tag NFC'  ) 
-							echo '<img src="plugins/badger/doc/images/badge3.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge3.png" height="105" width="95" />';
 						elseif ( $eqLogic->getConfiguration('modelTag') == 'Sticker'  )
-							echo '<img src="plugins/badger/doc/images/badge4.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge4.png" height="105" width="95" />';
 						elseif ( $eqLogic->getConfiguration('modelTag') == 'Mobile'  )
-							echo '<img src="plugins/badger/doc/images/badge5.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge5.png" height="105" width="95" />';
 						elseif ( $eqLogic->getConfiguration('modelTag') == 'Bague NFC'  )
-							echo '<img src="plugins/badger/doc/images/badge6.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge6.png" height="105" width="95" />';
 						elseif ( $eqLogic->getConfiguration('modelTag') == 'Analog Input'  )
-							echo '<img src="plugins/badger/doc/images/badge7.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge7.png" height="105" width="95" />';
 						else
-							echo '<img src="plugins/badger/doc/images/badge1.png" height="105" width="95" />';
+							echo '<img src="plugins/badger/desktop/images/badge1.png" height="105" width="95" />';
 
 						echo "</center>";
 						echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
@@ -177,7 +177,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 						$opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
 						echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
 						echo "<center>";
-						echo '<img src="plugins/badger/doc/images/code.png" height="105" width="95" />';
+						echo '<img src="plugins/badger/desktop/images/code.png" height="105" width="95" />';
 						echo "</center>";
 						echo '<span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
 						echo '</div>';
