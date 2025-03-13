@@ -3,7 +3,7 @@
 	"name": "Badger",
 	"pluginVersion": "0.1",
 	"description": {
-		"fr_FR": "plug in de gestion de peripheriques wiegand"
+		"fr_FR": "Ce plugin permet de connecter des lecteurs de badges (RFID/NFC) utilisant le protocole Wiegand (8/26/34)."
 	},
 	"licence": "AGPL",
 	"author": "superdcat",
