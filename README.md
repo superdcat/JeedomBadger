@@ -1,8 +1,2 @@
 ﻿
-Plug In badger
-
-Ce plug in , permet de connecter Jeedom (https://www.jeedom.com/site/fr/) à des lecteurs Wiegand.
-
-Documentation :
-
-https://github.com/superdcat/JeedomBadger/blob/master/doc/fr_FR/index.asciidoc
+Plug In déprécié, utilisez Badger Fork sur le market Jeedom
